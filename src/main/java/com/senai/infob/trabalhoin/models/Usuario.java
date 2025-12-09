@@ -11,33 +11,41 @@ import jakarta.persistence.Table;
 @Table(name="usuario")
 public class Usuario {
     
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-
+    
     @Column(name="nome")
     private String nome;
-
+    
+    @Column(name="senha")
+    private String senha;
+    
     @Column(name="idade")
     private Integer idade;
-
+    
     @Column(name="email")
     private String email;
-
+    
     @Column(name="telefone")
     private String telefone;
 
     public Usuario() {
     }
 
-    public Usuario(Integer id, String nome, Integer idade, String email, String telefone) {
+    public Usuario(Integer id, String nome, Integer idade, String email, String telefone, String senha) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.email = email;
         this.telefone = telefone;
+        this.senha = senha;
     }
+
+
+   
 
     public Integer getId() {
         return id;
@@ -77,6 +85,14 @@ public class Usuario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     
